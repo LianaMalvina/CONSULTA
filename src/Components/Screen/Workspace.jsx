@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom'
 
 const Workspace = () => {
     const workspaces = obtenerWorkspaces()
+    
   return (
     <div>
       <h1>entornos chotos</h1>
       {
-       workspaces.map((Workspace)=>{
+       workspaces.map((workspace)=>{
         return(
-            <div key={workspaces.id}>
-                <h3>{Workspace.name}</h3>
-                <Link to={'/workspace' + Workspace.id}>Entras</Link>
+            <div key={workspace.id}>
+                <h3>{workspace.name}</h3>
+                <Link to={`/workspace/${workspace.id}`}>Entras</Link>
             </div>
         )
        }) 

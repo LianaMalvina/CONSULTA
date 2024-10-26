@@ -96,7 +96,7 @@ const obtenerWorkspaces =()=>{//si ya hay canales de trabajo, entonces devuelve 
 }
 const crearWorkspaces = (nuevoWorkspace)=>{
  
-    nuevoWorkspace.id = uuidv4
+    nuevoWorkspace.id = uuidv4()
     let workspaces  = obtenerWorkspaces()
     workspaces.push(nuevoWorkspace)
    
@@ -105,7 +105,7 @@ localStorage.setItem('workspaces',JSON.stringify(workspaces))}
 
 const obtenerWorkspacesPorId = (id)=>{
     let workspaces = obtenerWorkspaces()
-    let workspace = workspaces.find(workspace => workspace == id)
+    let workspace = workspaces.find(workspace => workspace.id == id)
     return workspace
 }
 
